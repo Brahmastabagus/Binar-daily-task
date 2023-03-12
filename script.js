@@ -136,13 +136,13 @@ const person = [
 // }
 
 // 5
-// for (let i = 0; i < person.length; i++) {
-//   for (let j = 0; j < person[i].name.length; j++) {
-//     if (person[i].name[j] === "w") {
-//       console.log(person[i]);
-//     }
-//   }
-// }
+for (let i = 0; i < person.length; i++) {
+  for (let j = 0; j < person[i].name.length; j++) {
+    if (person[i].name[j] === "w" || person[i].name[j] === "W") {
+      console.log(person[i]);
+    }
+  }
+}
 
 // 6
 // for (let i = 0; i < person.length; i++) {

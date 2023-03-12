@@ -129,11 +129,11 @@ const person = [
 // }
 
 // 4
-// for (let i = 0; i < person.length; i++) {
-//   if (person[i].age >= 30 || person[i].age <= 25 && person[i].eyeColor === "blue") {
-//     console.log(person[i]);
-//   }
-// }
+for (let i = 0; i < person.length; i++) {
+  if ((person[i].age >= 30 || person[i].age <= 25) && person[i].eyeColor === "blue") {
+    console.log(person[i]);
+  }
+}
 
 // 5
 // for (let i = 0; i < person.length; i++) {

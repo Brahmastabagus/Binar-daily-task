@@ -129,11 +129,11 @@ const person = [
 // }
 
 // 4
-for (let i = 0; i < person.length; i++) {
-  if ((person[i].age >= 30 || person[i].age <= 25) && person[i].eyeColor === "blue") {
-    console.log(person[i]);
-  }
-}
+// for (let i = 0; i < person.length; i++) {
+//   if ((person[i].age >= 30 || person[i].age <= 25) && person[i].eyeColor === "blue") {
+//     console.log(person[i]);
+//   }
+// }
 
 // 5
 // for (let i = 0; i < person.length; i++) {
@@ -143,7 +143,6 @@ for (let i = 0; i < person.length; i++) {
 //     }
 //   }
 // }
-// console.log(person[0].name[1]);
 
 // 6
 // for (let i = 0; i < person.length; i++) {
@@ -154,11 +153,10 @@ for (let i = 0; i < person.length; i++) {
 
 // 7
 // for (let i = 0; i < person.length; i++) {
-// // if (person[i].age <= 30 || person[i].eyeColor === "brown" && person[i].favoriteFruit === "banana") {
+// // if ((person[i].age <= 30 || person[i].eyeColor === "brown") && person[i].favoriteFruit === "banana") {
 //   //   console.log(person[i]);
 //   // }
 // }
-// console.log(person[9].age <= 30 || person[9].eyeColor === "brown" && person[9].favoriteFruit === "banana");
 
 // 8
 // for (let i = 0; i < person.length; i++) {

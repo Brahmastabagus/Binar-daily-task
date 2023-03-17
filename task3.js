@@ -370,6 +370,7 @@ let data = [
 const print = (message, data) => {
   console.log(message);
   console.log(data);
+  console.log("\n");
 }
 
 const checkCondition = (value1, value2) => {
@@ -388,24 +389,9 @@ const duplicateArr = data => {
   return data
 }
 
-// 1) display / print person yang registered dibawah tahun 2022
-// const personRegistered = data => {
-//   let arr = []
-
-//   for (let i = 0; i < data.length; i++) {
-//     if (data[i].registered.substring(0, 4) < "2022") {
-//       arr.push(data[i])
-//     }
-//   }
-
-//   return arr
-// }
-
-// print(, personRegistered(data))
-
 const personRegistered = data => {
   let arr = []
-  
+
   data.map(person => {
     person.registered.substring(0, 4) < "2022" ? arr.push(person) : undefined
   })
@@ -475,6 +461,82 @@ const genderHobby = data => {
 
 print("5) display friends yang gender nya male dan mempunya hobby basketball", duplicateArr(genderHobby(data)))
 
+// 6) display friends yang isActive nya true dan gender nya female dan favorite fruit nya strawberry
+const friend = data => {
+  let arr = []
 
+  data.map(person => {
+    person.friends.map(friend => {
+      checkCondition(friend.isActive, true) && checkCondition(friend.gender, "female") && checkCondition(friend.favoriteFruit, "strawberry") ? arr.push(friend) : undefined
+    })
+  })
 
+  return arr
+}
+
+print("6) display friends yang isActive nya true dan gender nya female dan favorite fruit nya strawberry", duplicateArr(friend(data)))
+
+// 7) display siapa saja yang mempunya teman name Theresia
+const getFriend = data => {
+  let arr = []
+
+  data.map(person => {
+    person.friends.map(friend => {
+      checkCondition(friend.name, "Theresia") ? arr.push(person) : undefined
+    })
+  })
+
+  return arr
+}
+
+print("7) display siapa saja yang mempunya teman name Theresia", duplicateArr(getFriend(data)))
+
+// 8) display hobby id 1 dari friends yang isActive nya true
+const hobby = data => {
+  let arr = []
+
+  data.map(person => {
+    person.friends.map(friend => {
+      friend.hobby.find((hobby) => {
+        checkCondition(hobby.id, 1) && checkCondition(friend.isActive, true) ? arr.push(hobby) : undefined
+      })
+    })
+  })
+
+  return arr
+}
+
+print("8) display hobby id 1 dari friends yang isActive nya true", hobby(data))
+
+// 9) display person yang eye color nya brown dan favorite fruit nya banana dan mempunyai teman hobby basketball
+const person = data => {
+  let arr = []
+
+  data.map(person => {
+    person.friends.map(friend => {
+      friend.hobby.find(({hobby}) => {
+        checkCondition(person.eyeColor, "brown") && checkCondition(friend.favoriteFruit, "banana") && checkCondition(hobby, "basketball") ? arr.push(person) : undefined
+      })
+    })
+  })
+
+  return arr
+}
+
+print("9) display person yang eye color nya brown dan favorite fruit nya banana dan mempunyai teman hobby basketball", duplicateArr(person(data)))
+
+// 10) display person yang mempunya friends gender male atau favorite fruit nya banana dan registered di tahun 2023
+const personFriend = data => {
+  let arr = []
+
+  data.map(person => {
+    person.friends.map(friend => {
+      (checkCondition(friend.gender, "male") || checkCondition(friend.favoriteFruit, "banana")) && checkCondition(person.registered.substring(0, 4), "2023") ? arr.push(person) : undefined
+    })
+  })
+
+  return arr
+}
+
+print("10) display person yang mempunya friends gender male atau favorite fruit nya banana dan registered di tahun 2023", duplicateArr(personFriend(data)))
 
